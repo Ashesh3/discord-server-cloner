@@ -15,7 +15,7 @@ def clear_line(n=1):
     print(LINE_UP, end=LINE_CLEAR)
 
 
-def logs(message, type, number=None):
+def logs(message, type, is_summary=False):
   if logs_enabled:
     log_types = {
       'add': ('[+]', Fore.GREEN),
@@ -24,11 +24,8 @@ def logs(message, type, number=None):
       'error': ('[ERROR]', Fore.RED)
     }
     prefix, color = log_types.get(type, ('[?]', Fore.RESET))
-
-    if number is not None:
-      print(f" {color}{prefix}{Style.RESET_ALL} {message}")
-    else:
-      print(f" {color}{prefix}{Style.RESET_ALL} {message}")
+    print(f" {color}{prefix}{Style.RESET_ALL} {message}")
+    if not is_summary:
       clear_line()
 
 
