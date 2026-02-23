@@ -4,12 +4,12 @@ import json
 import time
 
 try:
-    import discord
-    from discord import Client, Intents
-    from rich.prompt import Prompt, Confirm
+  import discord
+  from discord import Client, Intents
+  from rich.prompt import Prompt, Confirm
 except ImportError:
-    print("Missing dependencies. Run: pip install -r requirements.txt")
-    sys.exit(1)
+  print("Missing dependencies. Run: pip install -r requirements.txt")
+  sys.exit(1)
 
 from utils.cloner import Cloner
 from utils.panel import Panel, Panel_Run
@@ -135,7 +135,7 @@ if __name__ == "__main__":
   try:
     client.run(TOKEN, bot=False)
     clear()
-  except Exception as e:
+  except discord.LoginFailure as e:
     print(e)
     print("> Invalid Token")
     with open("./utils/config.json", "r") as f:
@@ -143,3 +143,5 @@ if __name__ == "__main__":
     data["token"] = False
     with open("./utils/config.json", "w") as f:
       json.dump(data, f, indent=4)
+  except Exception as e:
+    print(f"> Error: {e}")
