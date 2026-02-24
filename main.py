@@ -15,6 +15,11 @@ from utils.cloner import Cloner
 from utils.panel import Panel, Panel_Run
 from time import sleep
 
+# Create config from template if it doesn't exist
+if not os.path.exists("./utils/config.json"):
+  import shutil
+  shutil.copy("./utils/config.example.json", "./utils/config.json")
+
 client = Client(intents=Intents.all())
 
 os.system('cls' if os.name == 'nt' else 'clear')
