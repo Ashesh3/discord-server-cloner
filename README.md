@@ -21,8 +21,8 @@ Clone a Discord server's structure â€” roles, channels, categories, and emojis â
 ## Installation
 
 ```bash
-git clone https://github.com/Ashesh3/DiscordServerCloner.git
-cd DiscordServerCloner
+git clone https://github.com/Ashesh3/discord-server-cloner.git
+cd discord-server-cloner
 pip install -r requirements.txt
 cp utils/config.example.json utils/config.json
 ```
