@@ -2,6 +2,9 @@
 
 Clone a Discord server's structure — roles, channels, categories, and emojis — to another server.
 
+<img width="507" height="972" alt="image" src="https://github.com/user-attachments/assets/600bb91e-99e9-468f-8b54-3c29e5ac9683" />
+
+
 ## Features
 
 - Server name and icon
